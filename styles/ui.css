@@ -1,0 +1,308 @@
+/* Layout shell, home page, and email activity log. */
+
+/* --- Root layout --- */
+
+.ea-layout-html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ea-layout-body {
+  min-height: 100%;
+}
+
+/* --- Home --- */
+
+.ea-home {
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  max-width: 48rem;
+  padding: 2rem 1rem;
+}
+
+.ea-home__header {
+  margin-bottom: 1.5rem;
+}
+
+.ea-home__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ea-text);
+}
+
+.ea-home__subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--ea-text-muted);
+}
+
+.ea-section {
+  margin-bottom: 2rem;
+}
+
+.ea-section__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ea-text);
+}
+
+.ea-section__lead {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--ea-text-muted);
+}
+
+.ea-code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background: var(--ea-surface-subtle);
+  border: 1px solid var(--ea-border);
+}
+
+/* --- Contacts --- */
+
+.ea-contacts__empty {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px dashed var(--ea-border);
+  font-size: 0.875rem;
+  color: var(--ea-text-muted);
+}
+
+.ea-contacts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ea-border);
+  overflow: hidden;
+}
+
+.ea-contacts__item {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--ea-border);
+  background: var(--ea-surface-row);
+}
+
+.ea-contacts__item:first-child {
+  border-top: none;
+}
+
+.ea-contacts__email {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--ea-text);
+}
+
+.ea-contacts__name {
+  margin-top: 0.125rem;
+  font-size: 0.8125rem;
+  color: var(--ea-text-muted);
+}
+
+.ea-contacts__welcome {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.ea-contacts__welcome-label {
+  color: var(--ea-text-subtle);
+}
+
+.ea-contacts__welcome-value {
+  color: var(--ea-text);
+}
+
+/* --- Broadcast form --- */
+
+.ea-broadcast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 32rem;
+}
+
+.ea-broadcast__hint {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--ea-text-subtle);
+}
+
+.ea-broadcast__hint code {
+  font-size: 0.8em;
+}
+
+.ea-broadcast__label {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ea-text);
+}
+
+.ea-broadcast__label:first-of-type {
+  margin-top: 0;
+}
+
+.ea-broadcast__input,
+.ea-broadcast__textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: var(--ea-text);
+  background: var(--ea-surface);
+  border: 1px solid var(--ea-border);
+  border-radius: 0.375rem;
+}
+
+.ea-broadcast__textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.ea-broadcast__input:focus,
+.ea-broadcast__textarea:focus {
+  outline: 2px solid var(--ea-text-subtle);
+  outline-offset: 1px;
+}
+
+.ea-broadcast__msg {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+}
+
+.ea-broadcast__msg--error {
+  color: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ea-broadcast__msg--error {
+    color: #fca5a5;
+  }
+}
+
+.ea-broadcast__msg--success {
+  color: var(--ea-badge-received-text);
+}
+
+.ea-broadcast__submit {
+  margin-top: 0.75rem;
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ea-surface);
+  background: var(--ea-text);
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.ea-broadcast__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ea-broadcast__submit {
+    color: var(--background);
+    background: var(--foreground);
+  }
+}
+
+/* --- Email log --- */
+
+.ea-log__empty {
+  margin: 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ea-border);
+  background-color: var(--ea-surface-subtle);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--ea-text-muted);
+}
+
+.ea-log__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ea-border);
+}
+
+.ea-log__list > li + li {
+  border-top: 1px solid var(--ea-border);
+}
+
+.ea-log__item {
+  background-color: var(--ea-surface-row);
+  padding: 0.75rem 1rem;
+}
+
+.ea-log__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  row-gap: 0.25rem;
+}
+
+.ea-log__badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.ea-log__badge--received {
+  background-color: var(--ea-badge-received-bg);
+  color: var(--ea-badge-received-text);
+}
+
+.ea-log__badge--sent {
+  background-color: var(--ea-badge-sent-bg);
+  color: var(--ea-badge-sent-text);
+}
+
+.ea-log__time {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--ea-text-subtle);
+}
+
+.ea-log__thread {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1rem;
+  color: var(--ea-text-faint);
+}
+
+.ea-log__preview {
+  margin-top: 0.5rem;
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--ea-text);
+}

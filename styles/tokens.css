@@ -1,0 +1,38 @@
+/* Design tokens: app chrome, email log, and document colors. */
+
+:root {
+  --font-mono: ui-monospace, monospace;
+  --background: #ffffff;
+  --foreground: #171717;
+  --ea-text: #18181b;
+  --ea-text-muted: #52525b;
+  --ea-text-subtle: #71717a;
+  --ea-text-faint: #a1a1aa;
+  --ea-border: #e4e4e7;
+  --ea-surface: #ffffff;
+  --ea-surface-subtle: #fafafa;
+  --ea-surface-row: #ffffff;
+  --ea-badge-received-bg: #d1fae5;
+  --ea-badge-received-text: #065f46;
+  --ea-badge-sent-bg: #e0f2fe;
+  --ea-badge-sent-text: #075985;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --ea-text: #e4e4e7;
+    --ea-text-muted: #a1a1aa;
+    --ea-text-subtle: #a1a1aa;
+    --ea-text-faint: #71717a;
+    --ea-border: #27272a;
+    --ea-surface: #09090b;
+    --ea-surface-subtle: #09090b;
+    --ea-surface-row: rgba(9, 9, 11, 0.8);
+    --ea-badge-received-bg: #022c22;
+    --ea-badge-received-text: #a7f3d0;
+    --ea-badge-sent-bg: #082f49;
+    --ea-badge-sent-text: #bae6fd;
+  }
+}
